@@ -1,0 +1,19 @@
+{
+    "ci": {
+      "collect": {
+        "numberOfRuns": 3,
+        "url": ["https://example.com"]
+      },
+      "assert": {
+        "assertions": {
+          "first-contentful-paint": ["warn", {"maxNumericValue": 2000}],
+          "speed-index": "error",
+          "largest-contentful-paint": "error"
+        }
+      },
+      "upload": {
+        "target": "temporary-public-storage"
+      }
+    }
+  }
+  
