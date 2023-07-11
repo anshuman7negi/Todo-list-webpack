@@ -10,7 +10,7 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 50%;
   margin: 10rem auto;
   padding: 20px;
   background-color: #fff;

@@ -12,7 +12,7 @@ const displayList = () => {
     row.innerHTML += `<li>
                              <div class="rowData" > <input type="checkbox"  ${list.completed ? 'checked' : ''} />${list.description} </div>
                              <i class="fa-solid fa-ellipsis-vertical"></i>
-                         </li>`;
+                         </li> <hr>`;
   });
 };
 
