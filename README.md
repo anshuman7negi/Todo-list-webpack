@@ -31,7 +31,7 @@
 
 # 📖 Awesome Books <a name="about-project"></a>
 
-A Awesome Book  is a live website where you can store your daily tasks.
+A To Do list  is a live website where you can store your daily tasks.
 
 ## 🛠 Built With <a name="built-with"></a>
 
