@@ -29,7 +29,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 Awesome Books <a name="about-project"></a>
+# 📖 To Do List <a name="about-project"></a>
 
 A To Do list  is a live website where you can store your daily tasks.
 
