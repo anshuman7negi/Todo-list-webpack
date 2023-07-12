@@ -33,6 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 12px;
+  align-items: center;
 }
 
 input {
@@ -43,10 +44,15 @@ input[type="text"]:focus {
   outline: none;
 }
 
+.addData {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
 button {
   border: none;
   background-color: #fff;
-  padding-top: 20px;
 }
 
 .rowData {

@@ -7,7 +7,9 @@ module.exports = {
     index: './src/index.js',
   },
   devServer: {
-    static: './dist',
+    static: {
+      directory: path.resolve(__dirname, 'src'), // Set the static directory to 'src'
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
