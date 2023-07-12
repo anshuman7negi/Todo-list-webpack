@@ -39,6 +39,10 @@ input {
   border: none;
 }
 
+input[type="text"]:focus {
+  outline: none;
+}
+
 button {
   border: none;
   background-color: #fff;
