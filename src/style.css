@@ -80,17 +80,18 @@ button {
   color: gray;
 }
 
-
 .fa-trash:hover {
   color: red;
 }
 
-.fa-level-down-alt:before, .fa-turn-down:before {
+.fa-level-down-alt::before,
+.fa-turn-down::before {
   content: "\f3be";
   color: greenyellow;
 }
 
-.fa-rotate:before, .fa-sync-alt:before {
+.fa-rotate::before,
+.fa-sync-alt::before {
   content: "\f2f1";
   color: cornflowerblue;
 }

@@ -3,19 +3,6 @@ import AddList from './tudo.js';
 const myList = new AddList();
 myList.displayList();
 
-const addButton = document.getElementById('add-button');
-addButton.addEventListener('click', () => {
-  const task = document.getElementById('task').value.trim();
-  const completed = false;
-  const index = myList.todoDetails.length + 1;
-  if (task) {
-    myList.addRow(task, completed, index);
-    myList.displayList();
-    document.getElementById('task').value = '';
-    todoCheckbox();
-  }
-});
-
 function todoCheckbox() {
   const checkboxes = document.querySelectorAll('.edit-text');
   checkboxes.forEach((checkbox) => {
@@ -34,5 +21,18 @@ function todoCheckbox() {
     });
   });
 }
+
+const addButton = document.getElementById('add-button');
+addButton.addEventListener('click', () => {
+  const task = document.getElementById('task').value.trim();
+  const completed = false;
+  const index = myList.todoDetails.length + 1;
+  if (task) {
+    myList.addRow(task, completed, index);
+    myList.displayList();
+    document.getElementById('task').value = '';
+    todoCheckbox();
+  }
+});
 
 window.addEventListener('DOMContentLoaded', todoCheckbox);

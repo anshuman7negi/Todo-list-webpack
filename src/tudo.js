@@ -21,7 +21,7 @@ export default class AddList {
       const removeLine = document.querySelectorAll('.removeLine');
 
       for (let i = 0; i < removeBtn.length; i += 1) {
-        removeBtn[i].addEventListener('click', (event) => {
+        removeBtn[i].addEventListener('click', () => {
           removeLine[i].remove();
           this.deleteRow(i);
           this.displayList();
@@ -30,8 +30,8 @@ export default class AddList {
 
       const editBtn = document.querySelectorAll('.editBtn');
       editBtn.forEach((editElement) => {
-        editElement.addEventListener('click', (event) => {
-          const index = event.target.getAttribute('data-index');
+        editElement.addEventListener('click', () => {
+          const index = editElement.getAttribute('data-index');
           const editInput = document.querySelector(`input.editBtn[data-index="${index}"]`);
           editInput.readOnly = false;
           editInput.addEventListener('blur', (event) => {
@@ -52,7 +52,7 @@ export default class AddList {
 
   deleteRow(index) {
     this.todoDetails.splice(index, 1);
-    for (let i = index; i < this.todoDetails.length; i++) {
+    for (let i = index; i < this.todoDetails.length; i += 1) {
       this.todoDetails[i].index = i + 1;
     }
     localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
