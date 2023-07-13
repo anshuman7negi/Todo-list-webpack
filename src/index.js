@@ -1,4 +1,4 @@
-import './style.css';
+import './style.css'
 import AddList from './modules/tudo.js';
 import CrudOperations from './modules/crud.js';
 
