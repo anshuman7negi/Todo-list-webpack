@@ -1,3 +1,5 @@
+import './style.css';
+
 export default class AddList {
   constructor() {
     const previousData = localStorage.getItem('todoData');
