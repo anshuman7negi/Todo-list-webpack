@@ -1,17 +1,22 @@
-import AddList from './tudo.js';
+import './style.css'
+import AddList from './modules/tudo.js';
+import CrudOperations from './modules/crud.js';
 
+
+const myCrud = new CrudOperations();
 const myList = new AddList();
+
+window.addEventListener('DOMContentLoaded', myList.displayList.bind(myList));
 
 const addButton = document.getElementById('add-button');
 addButton.addEventListener('click', () => {
   const task = document.getElementById('task').value.trim();
   const completed = false;
-  const index = myList.todoDetails.length + 1;
+  const index = myCrud.todoDetails.length + 1;
   if (task) {
-    myList.addRow(task, completed, index);
+    myCrud.addRow(task, completed, index);
     myList.displayList();
     document.getElementById('task').value = '';
   }
 });
 
-window.addEventListener('DOMContentLoaded', myList.displayList.bind(myList));
