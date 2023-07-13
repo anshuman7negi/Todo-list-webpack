@@ -1,4 +1,3 @@
-import '../style.css';
 import CrudOperations from './crud.js';
 
 const myCrud = new CrudOperations();
