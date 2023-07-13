@@ -56,7 +56,7 @@ A To Do list  is a live website where you can store your daily tasks.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- comming soon...
+- [Live Demo Link](https://anshuman7negi.github.io/Todo-list-webpack/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,7 +129,7 @@ To run tests on the cloned project, run the following commands:
 
 ### Deployment
 
-Visit this project's single-page app [here](https://anshuman7negi.github.io/Todo-list-webpack/).
+Visit this project's single-page app [here](https://anshuman7negi.github.io/Todo-list-webpack/dist/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
