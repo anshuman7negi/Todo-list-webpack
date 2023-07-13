@@ -6,28 +6,26 @@ export default class AddList {
 
   displayList() {
     const reciveData = localStorage.getItem('todoData');
+    const row = document.getElementById('lists');
+    row.innerHTML = '';
     if (reciveData && JSON.parse(reciveData).length > 0) {
       this.todoDetails = JSON.parse(reciveData);
-      const row = document.getElementById('lists');
-      row.innerHTML = '';
+
       for (let i = 0; i < this.todoDetails.length; i += 1) {
         row.innerHTML += `<li class="removeLine">
                             <div class="rowData" > <input class="edit-text" type="checkbox"  ${this.todoDetails[i].completed ? 'checked' : ''} /> 
                             <input class="editBtn" type="text" value="${this.todoDetails[i].title}" data-index="${i}" readonly /> </div>
-                            <button id="${this.todoDetails[i].index}" class="remove-btn"> <i class="fas fa-trash"></i></button>
+                            <button id="${i}" class="remove-btn"> <i class="fas fa-trash"></i></button>
                         </li> <hr>`;
       }
+      // ------------------Remove Row Code-------------------------------------
       const removeBtn = document.querySelectorAll('.remove-btn');
-      const removeLine = document.querySelectorAll('.removeLine');
-
-      for (let i = 0; i < removeBtn.length; i += 1) {
-        removeBtn[i].addEventListener('click', () => {
-          removeLine[i].remove();
-          this.deleteRow(i);
-          this.displayList();
+      removeBtn.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          this.deleteRow(index);
         });
-      }
-
+      });
+      // -----------------Edit input Code--------------------------------
       const editBtn = document.querySelectorAll('.editBtn');
       editBtn.forEach((editElement) => {
         editElement.addEventListener('click', () => {
@@ -41,6 +39,25 @@ export default class AddList {
           });
         });
       });
+      // -------------------checkbox code--------------------------
+      const checkboxes = document.querySelectorAll('.edit-text');
+      checkboxes.forEach((checkbox) => {
+        const index = checkbox.parentNode.querySelector('.editBtn').getAttribute('data-index');
+        const editInput = checkbox.parentNode.querySelector('.editBtn');
+        const { completed } = this.todoDetails[index];
+
+        checkbox.checked = completed;
+        editInput.classList.toggle('completed', completed);
+
+        checkbox.addEventListener('change', (event) => {
+          const isChecked = event.target.checked;
+          editInput.classList.toggle('completed', isChecked);
+          this.todoDetails[index].completed = isChecked;
+          localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
+        });
+      });
+      // -----------------ClearCompletedBtn-----------------------------------
+      document.getElementById('clearCompletedBtn').addEventListener('click', this.removeCompletedTask);
     }
   }
 
@@ -62,6 +79,20 @@ export default class AddList {
   updateRowTitle(index, newTitle) {
     this.todoDetails[index].title = newTitle;
     localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
+    this.displayList();
+  }
+
+  removeCompletedTask = () => {
+    const incompleteTasks = this.todoDetails.filter((item) => item.completed === false);
+    this.todoDetails = incompleteTasks;
+    this.todoDetails.forEach((todo, index) => {
+      todo.index = index + 1;
+    });
+
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
+    }
+
     this.displayList();
   }
 }
