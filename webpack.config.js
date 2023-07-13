@@ -19,7 +19,7 @@ module.exports = {
   output: {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/Todo-list-webpack/dist/',
+    publicPath: '/Todo-list-webpack/',
   },
   module: {
     rules: [
