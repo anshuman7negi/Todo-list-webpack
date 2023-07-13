@@ -8,7 +8,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'src'), // Set the static directory to 'src'
+      directory: path.resolve(__dirname, 'dist'), // Set the static directory to 'src'
     },
   },
   plugins: [
