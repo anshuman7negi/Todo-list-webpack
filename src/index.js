@@ -1,7 +1,6 @@
-import './style.css'
+import './style.css';
 import AddList from './modules/tudo.js';
 import CrudOperations from './modules/crud.js';
-
 
 const myCrud = new CrudOperations();
 const myList = new AddList();
@@ -19,4 +18,3 @@ addButton.addEventListener('click', () => {
     document.getElementById('task').value = '';
   }
 });
-
