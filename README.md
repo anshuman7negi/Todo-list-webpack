@@ -81,34 +81,58 @@ Clone this repository to your desired folder:
 git clone your link repo https://github.com/anshuman7negi/Todo-list-webpack.git
 cd your folder name
 ```
-
 ### Install
 
-Install this project with:
+You need to have [Node.js and npm](https://nodejs.org/) installed to to successfully run and modify this project using packages.
 
-```
-npm install
-```
+You need to have [Webpack](https://nodejs.org/) installed to to successfully run, modify and bundle the code in the `./dist` directory. In the root directory of the repo run the following command:
+> npm install webpack webpack-cli --save-dev
+
+To be able to use live reloading you need to install webpack-dev-server. In the root directory of the repo run the following command:
+> npm install --save-dev webpack-dev-server
+
+Installations required to run and modify this project.
+
+You might want to have linters installed in your local env to successfully run and modify this project:
+
+- Webhint installation. Run the following command:
+> npm install --save-dev hint@7.x
+
+- Stylelint installation. Run the following command:
+> npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+
+- Eslint installation. Run the following command:
+> npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+
+
 
 ### Usage
 
-To run the project, execute the following command:
+You can use this project to create your To-Do list:
 
-Double-click on the index file (index.html)
+1. Run `npm start` in your command line (or open the Demo link). This will open a browser tab.
+2. Type your task in the input field. Click the "Add" button or press "Enter" key to add the task to the List. The new task is displayed in the List below.
+3. Click on the task to edit it. The "Delete" (bin) button appears instead of "Drag" button.
+5. Click the "Delete" (bin) button to delete the task.
+6. Check the completed tasks by clicking on them.
+7. Click the "Clear all completed" button to remove the completed tasks from the List.
+8. Refresh your page. Your data is preserved in the browser's memory.
 
 ### Run tests
 
-To run tests, run the following command:
+To run tests on the cloned project, run the following commands:
 
-npx hint .
+> npx hint .<br />
+> npx stylelint "**/*.{css,scss}" <br />
+> npx eslint . <br />
+> lighthouse url options
 
 ### Deployment
 
-You can deploy this project using:
-
-Deploy this project on any web server
+Visit this project's single-page app [here](https://anshuman7negi.github.io/Todo-list-webpack/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 👥 Authors <a name="authors"></a>
 
