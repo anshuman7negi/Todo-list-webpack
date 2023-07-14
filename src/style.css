@@ -18,6 +18,7 @@ body {
   margin: 10rem auto;
   padding: 20px;
   background-color: #fff;
+  box-shadow: 4px 6px 6px 2px rgb(214, 214, 214), -4px 6px 6px 2px rgb(214, 214, 214);
 }
 
 .head {
@@ -95,4 +96,24 @@ button {
 .fa-sync-alt::before {
   content: "\f2f1";
   color: cornflowerblue;
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 15px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10rem auto;
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 4px 6px 6px 2px rgb(214, 214, 214), -4px 6px 6px 2px rgb(214, 214, 214);
+  }
 }
