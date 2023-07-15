@@ -4,17 +4,18 @@ export default class CrudOperations {
     this.todoDetails = previousData ? JSON.parse(previousData) : [];
   }
 
-  addRow(title, completed, index) {
+  addRow(title, completed, index, myList) {
     const todo = { title, completed, index };
     this.todoDetails.push(todo);
     localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
+    myList.displayList();
   }
 
   deleteRow(index, myList) {
     this.todoDetails.splice(index, 1);
-    for (let i = index; i < this.todoDetails.length; i += 1) {
-      this.todoDetails[i].index = i + 1;
-    }
+    this.todoDetails.forEach((item, idx) => {
+      item.index = idx + 1;
+    });
     localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
     myList.displayList();
   }

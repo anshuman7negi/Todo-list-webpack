@@ -9,7 +9,6 @@ export default class AddList {
     row.innerHTML = '';
     if (reciveData && JSON.parse(reciveData).length > 0) {
       myCrud.todoDetails = JSON.parse(reciveData);
-
       for (let i = 0; i < myCrud.todoDetails.length; i += 1) {
         row.innerHTML += `<li class="removeLine">
                             <div class="rowData" > <input class="edit-text" type="checkbox"  ${myCrud.todoDetails[i].completed ? 'checked' : ''} /> 
