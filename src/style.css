@@ -46,6 +46,14 @@ input {
   outline: none;
 }
 
+.editBtn {
+  width: 100%;
+}
+
+.lists li:hover {
+  background-color: #eaeeca;
+}
+
 input[type="text"]:focus {
   outline: none;
 }
@@ -59,6 +67,7 @@ input[type="text"]:focus {
 button {
   border: none;
   background-color: #fff;
+  flex-shrink: 0;
 }
 
 .rowData {
@@ -96,6 +105,20 @@ button {
 .fa-sync-alt::before {
   content: "\f2f1";
   color: cornflowerblue;
+}
+
+.rotate {
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {

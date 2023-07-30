@@ -59,7 +59,7 @@ export default class AddList {
     });
     // -----------------ClearCompletedBtn-----------------------------------
     document.getElementById('clearCompletedBtn').addEventListener('click', () => {
-      myCrud.todoDetails = myCrud.removeCompletedTask();
+      myCrud.todoDetails = myCrud.removeCompletedTask(this);
       this.displayList();
     });
   }

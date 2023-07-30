@@ -1,14 +1,13 @@
 export default class CrudOperations {
   constructor() {
-    const previousData = localStorage.getItem('todoData');
+    const previousData = typeof localStorage !== 'undefined' ? localStorage.getItem('todoData') : null;
     this.todoDetails = previousData ? JSON.parse(previousData) : [];
   }
 
   addRow(title, completed, index, myList) {
     const todo = { title, completed, index };
     this.todoDetails.push(todo);
-    localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
-    myList.displayList();
+    this.updateLocalStorageAndDisplayList(myList);
   }
 
   deleteRow(index, myList) {
@@ -16,8 +15,7 @@ export default class CrudOperations {
     this.todoDetails.forEach((item, idx) => {
       item.index = idx + 1;
     });
-    localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
-    myList.displayList();
+    this.updateLocalStorageAndDisplayList(myList);
   }
 
   updateRowTitle(index, newTitle, myList) {
@@ -26,17 +24,19 @@ export default class CrudOperations {
     myList.displayList();
   }
 
-  removeCompletedTask() {
+  removeCompletedTask(myList) {
     const incompleteTasks = this.todoDetails.filter((item) => item.completed === false);
     this.todoDetails = incompleteTasks;
     this.todoDetails.forEach((todo, index) => {
       todo.index = index + 1;
     });
 
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
-    }
-
+    this.updateLocalStorageAndDisplayList(myList);
     return this.todoDetails;
+  }
+
+  updateLocalStorageAndDisplayList(myList) {
+    localStorage.setItem('todoData', JSON.stringify(this.todoDetails));
+    myList.displayList();
   }
 }

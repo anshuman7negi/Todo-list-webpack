@@ -6,14 +6,20 @@ const myList = new AddList();
 
 window.addEventListener('DOMContentLoaded', myList.displayList.bind(myList));
 
-const addButton = document.getElementById('add-button');
-addButton.addEventListener('click', () => {
-  const task = document.getElementById('task').value.trim();
-  const completed = false;
-  const myCrud = new CrudOperations();
-  const index = myCrud.todoDetails.length + 1;
-  if (task) {
-    myCrud.addRow(task, completed, index, myList);
-    document.getElementById('task').value = '';
+function handleAddButtonClick(event) {
+  if (event.type === 'click' || event.key === 'Enter') {
+    const task = document.getElementById('task').value.trim();
+    const completed = false;
+    const myCrud = new CrudOperations();
+    const index = myCrud.todoDetails.length + 1;
+    if (task) {
+      myCrud.addRow(task, completed, index, myList);
+      document.getElementById('task').value = '';
+    }
   }
-});
+}
+
+const addButton = document.getElementById('add-button');
+const enter = document.getElementById('task');
+addButton.addEventListener('click', handleAddButtonClick);
+enter.addEventListener('keypress', handleAddButtonClick);
